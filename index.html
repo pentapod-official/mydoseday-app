@@ -4,154 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyDoseDay — Medication Reminder for Mac</title>
+    <link rel="icon" href="logo-small.png">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-            color: #1d1d1f;
-            min-height: 100vh;
+        :root {
+            --bg: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --card: #f5f5f7;
+            --border: #e5e5ea; --accent: #0071e3;
         }
-        .hero {
-            text-align: center;
-            padding: 80px 24px 60px;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        .hero img {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-            margin-bottom: 32px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
-        }
-        .hero .tagline {
-            font-size: 20px;
-            color: #6e6e73;
-            margin-bottom: 32px;
-        }
-        .badge {
-            display: inline-block;
-            margin-top: 8px;
-        }
-        .badge img {
-            height: 48px;
-            width: auto;
-            border-radius: 0;
-            box-shadow: none;
-        }
-        .features {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-        .feature {
-            background: white;
-            border-radius: 16px;
-            padding: 28px 24px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .feature .icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-        .feature h3 {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature p {
-            font-size: 14px;
-            color: #6e6e73;
-            line-height: 1.5;
-        }
-        .footer {
-            text-align: center;
-            padding: 40px 24px;
-            color: #86868b;
-            font-size: 13px;
-        }
-        .footer a {
-            color: #86868b;
-            text-decoration: none;
-            margin: 0 12px;
-        }
-        .footer a:hover { text-decoration: underline; }
         @media (prefers-color-scheme: dark) {
-            body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #f5f5f7; }
-            .feature { background: #2a2a3e; }
-            .feature p { color: #98989d; }
-            .hero .tagline { color: #98989d; }
-            .footer { color: #6e6e73; }
-            .footer a { color: #6e6e73; }
+            :root {
+                --bg: #111; --text: #f5f5f7; --muted: #98989d; --card: #1c1c1e;
+                --border: #2c2c2e; --accent: #2997ff;
+            }
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; background: var(--bg); color: var(--text); }
+        nav { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; padding: 16px 24px; }
+        nav .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 16px; }
+        nav .logo img { width: 28px; height: 28px; border-radius: 7px; }
+        nav .links { display: flex; gap: 24px; }
+        nav .links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+        nav .links a:hover { color: var(--text); }
+        .hero { text-align: center; padding: 64px 24px 48px; max-width: 600px; margin: 0 auto; }
+        .hero img { width: 96px; height: 96px; border-radius: 22px; margin-bottom: 24px; }
+        .hero h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 10px; }
+        .hero p { font-size: 17px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+        .hero .cta { display: inline-block; background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 24px; font-size: 15px; font-weight: 600; text-decoration: none; }
+        .features { max-width: 900px; margin: 0 auto; padding: 0 24px 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+        .feat { background: var(--card); border-radius: 14px; padding: 24px 20px; }
+        .feat h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .feat p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+        footer { text-align: center; padding: 32px 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <img src="logo.png" alt="MyDoseDay App Icon">
-        <h1>MyDoseDay</h1>
-        <p class="tagline">Never miss a dose. Your medication companion for Mac.</p>
-        <p style="font-size: 15px; color: #6e6e73; line-height: 1.7; max-width: 520px; margin: 0 auto 32px;">
-            MyDoseDay sits quietly in your menu bar and reminds you to take your medications on time.
-            Track your doses, build streaks, and stay on top of your health — all from a single click.
-        </p>
-        <!--
-        <a class="badge" href="https://apps.apple.com/app/mydoseday/id000000000">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store">
+    <nav>
+        <a class="logo" href="index.html">
+            <img src="logo-small.png" alt="MyDoseDay">
+            MyDoseDay
         </a>
-        -->
-        <p style="font-size: 14px; color: #86868b; margin-top: 16px;">Coming soon to the Mac App Store</p>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <img src="logo-small.png" alt="MyDoseDay">
+        <h1>MyDoseDay</h1>
+        <p>A simple medication reminder that lives in your Mac's menu bar. Track doses, build streaks, and never miss a pill again.</p>
+        <span class="cta" style="opacity: 0.7; cursor: default;">Coming soon on the Mac App Store</span>
     </div>
 
     <div class="features">
-        <div class="feature">
-            <div class="icon">💊</div>
+        <div class="feat">
             <h3>Smart Reminders</h3>
-            <p>Get alerts at the right time with customizable sounds. Set daily or specific weekday schedules.</p>
+            <p>Floating alerts with customizable sounds. Set daily or specific weekday schedules.</p>
         </div>
-        <div class="feature">
-            <div class="icon">🔥</div>
+        <div class="feat">
             <h3>Streak Tracking</h3>
-            <p>Build your medication adherence streak. See your 7-day score and earn badges as you stay consistent.</p>
+            <p>Build your adherence streak. See your 7-day score and earn badges for consistency.</p>
         </div>
-        <div class="feature">
-            <div class="icon">📋</div>
+        <div class="feat">
             <h3>Dose History</h3>
-            <p>Every dose is logged automatically. Export your history as CSV or PDF to share with your doctor.</p>
+            <p>Every dose logged. Export as CSV or PDF to share with your doctor.</p>
         </div>
-        <div class="feature">
-            <div class="icon">🎨</div>
-            <h3>Personalize</h3>
-            <p>Choose from six color themes, pick your notification sound, and organize medications by category.</p>
-        </div>
-        <div class="feature">
-            <div class="icon">💡</div>
+        <div class="feat">
             <h3>Refill Alerts</h3>
-            <p>Track your supply count. Get a warning when your medication is running low and needs a refill.</p>
+            <p>Track supply count. Get warned when your medication is running low.</p>
         </div>
-        <div class="feature">
-            <div class="icon">🖥️</div>
+        <div class="feat">
+            <h3>Themes &amp; Sounds</h3>
+            <p>Six color themes, ten notification sounds. Make it yours.</p>
+        </div>
+        <div class="feat">
             <h3>Menu Bar Native</h3>
-            <p>Lives in your menu bar — always accessible, never in the way. Includes a macOS desktop widget.</p>
+            <p>Always one click away. Includes a macOS desktop widget.</p>
         </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2026 Pentapod. All rights reserved.</p>
-        <p style="margin-top: 12px;">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="support.html">Support</a>
-        </p>
-    </div>
+    <footer>&copy; 2026 Pentapod. All rights reserved.</footer>
 </body>
 </html>

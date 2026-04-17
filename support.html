@@ -4,138 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support — MyDoseDay</title>
+    <link rel="icon" href="logo-small.png">
     <style>
+        :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --card: #f5f5f7; --border: #e5e5ea; }
+        @media (prefers-color-scheme: dark) { :root { --bg: #111; --text: #f5f5f7; --muted: #98989d; --card: #1c1c1e; --border: #2c2c2e; } }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #fafafa;
-            color: #1d1d1f;
-            line-height: 1.7;
-        }
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 60px 24px 80px;
-        }
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .subtitle {
-            font-size: 16px;
-            color: #86868b;
-            margin-bottom: 40px;
-        }
-        h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-top: 36px;
-            margin-bottom: 12px;
-        }
-        p {
-            font-size: 15px;
-            color: #424245;
-            margin-bottom: 16px;
-        }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .contact-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            margin-top: 24px;
-        }
-        .contact-card h3 {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .faq-item {
-            margin-bottom: 24px;
-        }
-        .faq-item h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .faq-item p {
-            font-size: 14px;
-        }
-        .footer {
-            text-align: center;
-            padding: 40px 24px;
-            color: #86868b;
-            font-size: 13px;
-        }
-        .footer a { color: #86868b; margin: 0 12px; }
-        @media (prefers-color-scheme: dark) {
-            body { background: #1a1a2e; color: #f5f5f7; }
-            p { color: #c7c7cc; }
-            .subtitle { color: #6e6e73; }
-            .contact-card { background: #2a2a3e; }
-            .faq-item p { color: #98989d; }
-            .footer { color: #6e6e73; }
-            .footer a { color: #6e6e73; }
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; padding: 16px 24px; }
+        nav .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 16px; }
+        nav .logo img { width: 28px; height: 28px; border-radius: 7px; }
+        nav .links { display: flex; gap: 24px; }
+        nav .links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+        nav .links a:hover { color: var(--text); }
+        .content { max-width: 640px; margin: 0 auto; padding: 40px 24px 80px; }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .subtitle { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+        .faq { margin-bottom: 20px; }
+        .faq h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .faq p { font-size: 13px; color: var(--muted); }
+        .contact { background: var(--card); border-radius: 14px; padding: 24px; margin-top: 32px; }
+        .contact h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .contact p { font-size: 14px; color: var(--muted); }
+        a { color: #0071e3; text-decoration: none; }
+        footer { text-align: center; padding: 32px 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Support</h1>
-        <p class="subtitle">We're here to help you get the most out of MyDoseDay.</p>
-
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq-item">
-            <h3>How do I add a medication?</h3>
-            <p>Click the pill icon in your menu bar to open MyDoseDay. Tap the "Add" button at the bottom, then fill in the medication name, dose, schedule, and reminder times.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do reminders work?</h3>
-            <p>MyDoseDay shows a floating alert on your screen at each scheduled time with your chosen sound. You can mark the dose as Taken, Snooze it, or Skip it directly from the alert.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Can I set reminders for specific days of the week?</h3>
-            <p>Yes. When adding or editing a medication, choose "Specific Days" under the Schedule section and select the days you need.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do I change the notification sound?</h3>
-            <p>Open MyDoseDay, go to Settings, and scroll to "Reminder Sound." Select any sound to preview and apply it.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Where is my data stored?</h3>
-            <p>All data is stored locally on your Mac. Nothing is sent to any server. You can export your dose history as CSV or PDF from the History section.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>How do I reset all data?</h3>
-            <p>Delete the App from your Mac to remove all associated data, or manually delete the database file at ~/Library/Application Support/default.store.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>The app doesn't appear in my menu bar</h3>
-            <p>Make sure the app is running. Check your menu bar for the pill icon. If you have many menu bar items, it may be hidden — try closing other menu bar apps to free space.</p>
-        </div>
-
-        <div class="contact-card">
-            <h3>Still need help?</h3>
-            <p>Send us an email and we'll get back to you as soon as possible.</p>
-            <p><a href="mailto:arunktym@gmail.com">arunktym@gmail.com</a></p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2026 Pentapod. All rights reserved.</p>
-        <p style="margin-top: 12px;">
+    <nav>
+        <a class="logo" href="index.html"><img src="logo-small.png" alt="MyDoseDay"> MyDoseDay</a>
+        <div class="links">
             <a href="index.html">Home</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-        </p>
+            <a href="support.html">Support</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Support</h1>
+        <p class="subtitle">Get help with MyDoseDay.</p>
+
+        <div class="faq">
+            <h3>How do I add a medication?</h3>
+            <p>Click the pill icon in your menu bar, then tap "Add" at the bottom. Fill in the name, dose, schedule, and reminder times.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How do reminders work?</h3>
+            <p>A floating alert appears on screen at each scheduled time with your chosen sound. Mark the dose as Taken, Snooze, or Skip directly from the alert.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Can I set reminders for specific days?</h3>
+            <p>Yes. When editing a medication, choose "Specific Days" under Schedule and select the days you need.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How do I change the notification sound?</h3>
+            <p>Go to Settings and scroll to "Reminder Sound." Select any sound to preview and apply it.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Where is my data stored?</h3>
+            <p>Everything is stored locally on your Mac. Nothing is sent to any server. Export your history as CSV or PDF from the History section.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How do I delete all data?</h3>
+            <p>Remove the app from your Mac to clear all data, or delete individual items from within the app.</p>
+        </div>
+
+        <div class="faq">
+            <h3>The app is not in my menu bar</h3>
+            <p>Make sure the app is running. Look for the pill icon in your menu bar. If hidden, try closing other menu bar items to free space.</p>
+        </div>
+
+        <div class="contact">
+            <h3>Still need help?</h3>
+            <p>Email us at <a href="mailto:arunktym@gmail.com">arunktym@gmail.com</a> and we will get back to you.</p>
+        </div>
     </div>
+
+    <footer>&copy; 2026 Pentapod. All rights reserved.</footer>
 </body>
 </html>
