@@ -42,48 +42,59 @@
         <h1>Privacy Policy</h1>
         <p class="date">Last updated: April 17, 2026</p>
 
-        <p>MyDoseDay is developed by Pentapod. We take your privacy seriously. This policy explains how we handle your information.</p>
+        <p><strong>Short version:</strong> Pentapod does not collect, receive, or have access to any of your data. MyDoseDay stores your medication information on your own Mac, and optionally in your own private iCloud account. We run no servers and have no ability to read, sell, or share what you enter into the app.</p>
 
-        <h2>Data We Collect</h2>
-        <p>MyDoseDay does not collect, transmit, or share any personal data. All information you enter is stored locally on your Mac and never leaves your device.</p>
-        <p>Data stored locally includes:</p>
+        <h2>What Pentapod collects</h2>
+        <p><strong>Nothing.</strong> MyDoseDay contains no analytics, no crash reporting, no advertising identifiers, and no third-party SDKs. Pentapod never receives any information about you, your medications, or your usage of the app. We operate no backend servers of our own.</p>
+
+        <h2>Where your data lives</h2>
+        <p>Everything you enter — medication names, dosages, schedules, dose history, and preferences — is stored locally on your Mac in a sandboxed database using Apple's SwiftData framework. The database is part of your macOS user account and is accessible only to you and to MyDoseDay itself.</p>
+        <p>Data stored by the app includes:</p>
         <ul>
-            <li>Medication names, dosages, and schedules</li>
-            <li>Dose history logs (taken, skipped, or snoozed)</li>
-            <li>App preferences (theme, sound, snooze duration)</li>
+            <li>Medication names, dosages, notes, and schedule times</li>
+            <li>Dose history logs (taken, skipped, snoozed, or missed)</li>
+            <li>App preferences (theme, sound, snooze duration, launch-at-login flag)</li>
         </ul>
 
-        <h2>Data Storage</h2>
-        <p>All data is stored in a local database on your Mac using Apple's SwiftData framework, accessible only to the App and your macOS user account.</p>
-
-        <h2>No Analytics or Tracking</h2>
-        <p>MyDoseDay does not include any analytics, crash reporting, advertising frameworks, or tracking mechanisms.</p>
-
-        <h2>No Network Connections</h2>
-        <p>MyDoseDay does not connect to the internet. The App functions entirely offline.</p>
-
-        <h2>Data Export</h2>
-        <p>The App allows you to export dose history as CSV or PDF files, saved to a location you choose. We do not have access to these files.</p>
+        <h2>Optional iCloud sync</h2>
+        <p>If you are signed into iCloud on your Mac with iCloud Drive enabled, MyDoseDay uses <strong>Apple's CloudKit</strong> service to sync your data across your own Apple devices (for example, from one Mac to another).</p>
+        <p>Key facts about our CloudKit usage:</p>
+        <ul>
+            <li>Data is stored in your <strong>private</strong> CloudKit database — a container inside <em>your own</em> iCloud account. It is not a database owned by Pentapod.</li>
+            <li>Pentapod has no ability to read, export, or access this data. Apple's CloudKit architecture prevents app developers from seeing records in a user's private database.</li>
+            <li>Data is encrypted in transit and governed by <a href="https://www.apple.com/legal/privacy/">Apple's iCloud Privacy Policy</a>.</li>
+            <li>If you do not want iCloud sync, turn off iCloud Drive on your Mac, or disable the app specifically in <em>System Settings → Apple ID → iCloud → Apps Using iCloud → MyDoseDay</em>. The app will continue to function using only local storage.</li>
+        </ul>
 
         <h2>Notifications</h2>
-        <p>The App uses local notifications generated and delivered entirely on your device. No notification data is sent externally.</p>
+        <p>Reminders are scheduled and delivered as local notifications on your device. No notification content is sent to any server.</p>
 
-        <h2>Children's Privacy</h2>
-        <p>MyDoseDay does not collect information from any user, including children under 13.</p>
+        <h2>Data export</h2>
+        <p>The app lets you export your dose history as CSV or PDF files saved to a location of your choosing on your Mac. Pentapod has no access to these files.</p>
 
-        <h2>Data Deletion</h2>
-        <p>All data is local. You can delete it by:</p>
+        <h2>Health data and medical advice</h2>
+        <p>MyDoseDay is a personal reminder utility. It does not use HealthKit, does not submit data to Apple Health, and does not provide medical advice, diagnosis, or treatment. The information you enter exists only for your personal use.</p>
+
+        <h2>Children's privacy</h2>
+        <p>MyDoseDay is suitable for all ages and does not knowingly collect information from anyone, including children under 13.</p>
+
+        <h2>Deleting your data</h2>
+        <p>You are in full control. You can delete your data at any time by:</p>
         <ul>
-            <li>Deleting medications or logs within the App</li>
-            <li>Removing the App from your Mac</li>
-            <li>Deleting <code>~/Library/Application Support/default.store</code></li>
+            <li>Deleting individual medications or logs within the app</li>
+            <li>Removing MyDoseDay from your Mac</li>
+            <li>Clearing the local store: <code>rm -rf ~/Library/Containers/com.arunktym.MedReminder/</code></li>
+            <li>If you use iCloud sync: <em>System Settings → Apple ID → iCloud → Apps Using iCloud → MyDoseDay → Delete Data from iCloud</em></li>
         </ul>
 
-        <h2>Changes to This Policy</h2>
-        <p>Updates will be posted on this page with a revised date.</p>
+        <h2>Third parties</h2>
+        <p>MyDoseDay does not share any data with third parties because it never receives any data in the first place. The only external service the app interacts with is Apple's CloudKit (only when iCloud sync is enabled), and that interaction happens strictly within your own iCloud account.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If this policy changes, the "Last updated" date above will be revised and the change will be posted at the same URL.</p>
 
         <h2>Contact</h2>
-        <p>Questions? Reach us at <a href="mailto:arunktym@gmail.com">arunktym@gmail.com</a></p>
+        <p>Questions or concerns? Email <a href="mailto:arunktym@gmail.com">arunktym@gmail.com</a>.</p>
     </div>
 
     <footer>&copy; 2026 Pentapod. All rights reserved.</footer>
